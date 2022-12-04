@@ -4,6 +4,15 @@
 }
 
 .task > p {
+    inline-size: 85%;
     margin-block-start: 0.5em;
     margin-block-end: 0.5em;
+    word-break: break-all;
+}
+
+.checkbox {
+    /* display: inline-block; */
+    /* vertical-align: top; */
+    height: 35px;
+    
 }

@@ -27,6 +27,8 @@ const Card = () => {
 
         <div className={styles.taskList}>
           <Task/>
+          <Task/>
+          <Task/>
         </div>
 
     </div>
