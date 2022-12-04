@@ -1,0 +1,29 @@
+.label{
+    background-color: #F4F6FA;
+    max-width: 100%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.label > p {
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    font-size: 12px;
+}
+
+.avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2E3239;
+    color: white;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    margin-left: 0.5em;
+}
