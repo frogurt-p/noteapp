@@ -1,14 +1,17 @@
 import logo from './logo.svg';
-import './App.css';
+import styles from './App.module.css';
 import Navbar from './compo/Navbar/Navbar';
 import Card from './compo/Card/Card';
 
 
 function App() {
   return (
-    <div className="App">
+    <div className={styles.App}>
       <Navbar/>
-      <Card/>
+        <div className={styles.cardContainer}>
+        <Card/>
+
+        </div>
     </div>
   );
 }
