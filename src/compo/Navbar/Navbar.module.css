@@ -1,0 +1,29 @@
+.navbar{
+    background-color: white;
+    height: 75px;
+    display: flex;
+    box-shadow: 0px 10px 5px -5.5px rgba(0,0,0,0.10);
+    font-family: 'Poppins', sans-serif;
+    align-items: center;
+}
+
+.navbar > h2 {
+    margin-left: 10px;
+}
+
+.signOut { 
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 50px;
+    border: 1px solid rgba(0,0,0,0.10);
+    border-radius: 11px;
+    margin-left: calc(100% - 250px); /* responsive pog */
+    transition: 0.3s;
+}
+
+.signOut:hover{
+    box-shadow: 0px 10px 5px -5.5px rgba(0,0,0,0.10);
+}

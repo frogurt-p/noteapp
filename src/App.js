@@ -29,7 +29,7 @@ function App() {
 
   return (
     <div className={styles.App}>
-      <Navbar/>
+      <Navbar user={user}/>
         <div className={styles.cardContainer}>
         
         { user ? <Card/> : <SignIn/> }
