@@ -100,7 +100,7 @@
 }
 
 .deleteButton > h3 {
-    color: red;
+    color: #FF0000;
 }
 
 .deleteButton:hover{
