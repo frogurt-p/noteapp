@@ -26,4 +26,29 @@
     width: 25px;
     height: 25px;
     margin-left: 0.5em;
+    transition: 0.3s;
 }
+
+.removeIcon{
+    width: 15px;
+    height: 15px;
+    display: none;
+}
+
+.avatar:hover{
+    background-color: red;
+}
+
+.avatar:hover .removeIcon{
+    /* background-color: #FF0000; */
+    /* display: block; */
+    display: flex;
+}
+
+.avatar:hover .initial{
+    /* background-color: #FF0000; */
+    /* display: block; */
+    display: none;
+}
+
+

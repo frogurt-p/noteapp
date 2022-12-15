@@ -53,6 +53,7 @@
     border: none;
     /* border-bottom: 0.3px solid black; */
     background-color: #F4F6FA;
+    width: 75px;
 }
 
 .input:focus{
