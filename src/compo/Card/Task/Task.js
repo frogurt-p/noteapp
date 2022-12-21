@@ -1,8 +1,10 @@
 import React from 'react'
 import styles from './Task.module.css';
 import { db } from '../../../firebase-connection';
-import {collection, getDocs, getDoc, setDoc, doc, updateDoc } from 'firebase/firestore';
+import {collection, getDocs, getDoc, setDoc, doc, updateDoc, deleteDoc } from 'firebase/firestore';
 import Menu from '../../../resource/Menu.svg'
+import Edit from '../../../resource/EditBlack.svg'
+import Trash from '../../../resource/TrashBlack.svg'
 
 
 const Task = (props) => {
@@ -33,6 +35,11 @@ const Task = (props) => {
   
   },[dropState])
 
+  const handleDeleteTask = () => {
+    const docLocation = doc(db, "card", props.parentId, "task", props.id)
+    deleteDoc(docLocation)
+  }
+
   const handleCheck =  () => {
     // setCheckState(prevState => !prevState)
     const docLocation = doc(db, "card", props.parentId, "task", props.id)
@@ -55,8 +62,12 @@ const Task = (props) => {
   const DropMenu = () => {
     return(
        <div className={styles.menuDrop}>
-            <p>Edit Task</p>
-            <p>Delete Task</p>
+            <div className={styles.menuItem}><p>Edit Task</p> <img src={Edit} alt='edit'/></div> 
+
+            <div className={styles.menuItemDelete} onClick={handleDeleteTask}>
+              <p className={styles.deleteTask}>Delete Task</p> 
+              <img className={styles.delete} src={Trash} alt='trash'/>
+            </div>
           </div>
     )
   }
