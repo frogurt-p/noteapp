@@ -3,6 +3,12 @@
     display: flex;
 }
 
+.taskDrop{
+    margin-left: 40px;
+    display: flex;
+    height: 150px;
+}
+
 .task > p {
     inline-size: 85%;
     margin-block-start: 0.5em;
@@ -14,5 +20,33 @@
     /* display: inline-block; */
     /* vertical-align: top; */
     height: 35px;
+    
+}
+
+.menu{
+    align-self: flex-start;
+    margin-top: 10.5px;
+    transition: 0.3s;
+}
+
+.menu:hover{
+    transform: scale(1.3);
+}
+
+.menuParent{
+    position: relative;
+}
+
+.menuDrop{
+    position: absolute;
+    background-color: #F4F6FA;
+    width: 250px;
+    right: 0px;
+    top: 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 11px;
+    box-sizing: border-box;
     
 }
