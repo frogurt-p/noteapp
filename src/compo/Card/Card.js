@@ -12,10 +12,17 @@ const Card = (props) => {
   const inputTitleVal = React.useRef();
   const [titleEditState, setTitleEditState] = React.useState(false);
   const [title, setTitle] = React.useState();
+  const [curDate, setCurDate] = React.useState()
 
   React.useEffect(()=> {
   setTitle(props.title)
   },[props.title])
+
+  React.useEffect(()=>{
+    if(props.dateCreated){
+      setCurDate(props.dateCreated.toDate());
+    }
+  },[props.dateCreated])
 
   const handleEditTitle = async () => {
     await setTitleEditState(true)
@@ -45,7 +52,8 @@ const Card = (props) => {
         taskName : task,
         dateCreated : serverTimestamp(),
       }).then((res)=>{
-        e.target._valueTracker.setValue("")
+        // e.target._valueTracker.setValue("")
+        inputVal.current.value = "";
       })
     }
   }
@@ -118,11 +126,12 @@ const Card = (props) => {
 
          {/* <hr className={styles.cardDivider}/> */}
 
-         <div className={styles.deleteButtonContainer} onClick={handleDeleteCard}>
-            <div className={styles.deleteButton}>
+         <div className={styles.deleteButtonContainer} >
+            <div className={styles.deleteButton} onClick={handleDeleteCard}>
               <h3>Delete Card</h3>
             </div>
          </div>
+         <p className={styles.createdAt}>{`created at : ${curDate} `}</p>
     </div>
   )
 }

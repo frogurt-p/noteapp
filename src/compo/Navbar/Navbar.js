@@ -5,7 +5,8 @@ import { auth } from '../../firebase-connection'
 const Navbar = (props) => {
   return (
     <div className={styles.navbar}>
-        <h2>Notes app</h2>
+        <h2 className={styles.title}>{`Notes app as : `}</h2>
+        <h2 className={styles.userName}>Jambrakitis</h2>
 
         { props.user ? <div className={styles.signOut} onClick={() => auth.signOut()}>Sign Out</div> : null}
     </div>

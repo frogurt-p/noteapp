@@ -18,11 +18,12 @@ function App() {
   const [render, setRender] = React.useState(false);
   const fireData = collection(db, "card")
   // const subColData = collection(db, "card", "CWLSGwGiNynYZqs62xiW", "task")
-  const q = query(fireData, where("uid","==", user && user.uid));
+  const q = query(fireData, where("uid","==", user && user.uid), orderBy("dateCreated","asc"));
   const [realTimeChange] = useCollectionData(q);
 
   const taskData = collectionGroup(db, "task")
   const [realTimeSubChange] = useCollectionData(taskData)
+
   React.useEffect(()=> {
 
     const fetchData = async () => {
@@ -49,12 +50,13 @@ function App() {
         title : "New Task",
         assigned : [user.displayName],
         uid : user.uid,
+        dateCreated : serverTimestamp(),
       }).then((res)=> {
         const docId = res.id;
         const subColRef = collection(db, "card", docId, "task")
         addDoc(subColRef,{
-          status : true,
-          taskName : "beginnertask",
+          status : false,
+          taskName : "task",
           dateCreated : serverTimestamp(),
         })
       })
@@ -68,7 +70,7 @@ function App() {
   // }
 
   const displayData = data.map((inst)=> {
-    return <Card key={inst.id} title={inst.title} assigned={inst.assigned} tasks={inst.tasks} id={inst.id}/>
+    return <Card key={inst.id} title={inst.title} assigned={inst.assigned} tasks={inst.tasks} id={inst.id} dateCreated={inst.dateCreated}/>
   })
 
   return (
@@ -79,6 +81,7 @@ function App() {
         { user ? displayData : <SignIn/> }
         { user ? <AddCard addData={addData}/> : null }
         </div>
+        
     </div>
   );
 }

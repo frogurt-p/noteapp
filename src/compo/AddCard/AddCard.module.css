@@ -9,8 +9,21 @@
     border-radius: 11px;
     align-self: center;
     transition: 0.3s;
+
+    box-sizing: border-box;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
 }
 
+@media only screen and (max-width: 660px) {
+
+    .addCard{
+    margin-top: 20px;
+    }
+
+  
+}
 .addCard:hover{
     box-shadow: 0px 10px 5px -5.5px rgba(0,0,0,0.10);
 }

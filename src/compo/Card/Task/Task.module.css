@@ -16,6 +16,15 @@
     word-break: break-all;
 }
 
+.input {
+    display: inline;
+    inline-size: 85%;
+    height: 41px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+}
+
 .checkbox {
     /* display: inline-block; */
     /* vertical-align: top; */
@@ -77,4 +86,16 @@
 
 .delete{
     filter: invert(21%) sepia(96%) saturate(6860%) hue-rotate(0deg) brightness(93%) contrast(119%);
+    margin-left: 10px;
+}
+
+.editingNotice{
+    margin: 0px;
+    margin-left: 40px;
+    font-weight: 600;
+}
+
+.taskNameBreakthrough{
+    text-decoration: line-through;
+    color: grey;
 }
